@@ -114,12 +114,12 @@ class Post(models.Model):
     #     self.excerpt = self.body[:54]
     #     super(Post, self).save(*args, **kwargs)
     #
-    # def get_absolute_url(self):
-    #     return reverse('blog:detail', kwargs={'pk': self.pk})
-    #
+    def get_absolute_url(self):
+        return reverse('myblog:detail', kwargs={'pk': self.pk})
+
     # def increase_views(self):
     #     self.views += 1
     #     self.save(update_fields=['views'])
     #
-    # class Meta:
-    #     ordering = ['-created_time']
+    class Meta:
+        ordering = ['-created_time']
